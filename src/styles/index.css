@@ -426,3 +426,16 @@ span {
     grid-template-rows: 1fr;
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  /* Disable card hover on touch devices */
+  .subscription-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Disable filter button hover on touch devices */
+  .filter-button:not(.is-active):hover {
+    background: none;
+  }
+}
