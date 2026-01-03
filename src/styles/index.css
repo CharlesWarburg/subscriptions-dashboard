@@ -1,0 +1,428 @@
+/* ------------------------------
+   Base / Reset
+-------------------------------- */
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-optical-sizing: auto;
+  background: linear-gradient(290deg, #e5d18e, #d4dae0);
+  color: #111;
+}
+
+/* Reset definition lists */
+.card-meta {
+  margin: 0;
+}
+
+.card-meta dt,
+.card-meta dd {
+  margin: 0;
+}
+
+/* Reset buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  line-height: normal;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* SVG sanity */
+svg {
+  display: block;
+}
+
+/* =========================
+   Layout
+========================= */
+
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 400px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.content-container {
+  flex: 1;
+  border-radius: 40px 0px 0px 40px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 80px 125px 0px;
+}
+
+/* ------------------------------
+   Typography
+-------------------------------- */
+
+h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Labels */
+
+.label {
+  font-weight: 300;
+}
+
+.label--xs {
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.label--sm {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.label--md {
+  font-size: 14px;
+}
+
+/* Values */
+
+.value {
+  font-weight: 300;
+}
+
+.value--md {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.value--lg {
+  font-size: 24px;
+}
+
+.value--xl {
+  font-size: 46px;
+  font-weight: 200;
+}
+
+.currency {
+  font-weight: 300;
+}
+
+.currency--lg {
+  font-size: 24px;
+}
+
+.currency--sm {
+  font-size: 14px;
+}
+
+/* ------------------------------
+   Sidebar
+-------------------------------- */
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Totals */
+
+.total {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Filters */
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filter-container {
+  display: flex;
+  overflow: hidden;
+  padding: 10px 45px 17px;
+  flex-direction: column;
+  border-radius: 5px 20px 20px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.filter-badge {
+  transform: rotate(-12deg);
+  border-radius: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: 40px;
+  width: 40px;
+  left: -8px;
+  top: -6px;
+}
+
+.filter-icon {
+  position: absolute;
+  color: #111;
+  left: 8px;
+  top: 8px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.filter-button {
+  font-size: 11px;
+  display: flex;
+  padding: 3px 10px 4px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff00;
+  border-radius: 5px;
+  border: 1px solid #111;
+}
+
+.filter-button.is-active {
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+}
+
+.filter-button:not(.is-active):hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------------------
+   Content
+-------------------------------- */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.content-grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 400px 400px;
+}
+
+/* ------------------------------
+   Card - Active
+-------------------------------- */
+
+.subscription-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 20px;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.subscription-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.card-badge {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  display: flex;
+  width: 58px;
+  height: 25px;
+  padding-bottom: 8px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(
+    180deg,
+    #DDFE63,
+    #F4FF76
+  );
+}
+
+.icon-wrapper {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.card-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.card-meta .label--sm {
+  color: #a9a9a9;
+}
+
+.meta-item--type {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.meta-item--amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+/* ------------------------------
+   Card - Inactive
+-------------------------------- */
+
+.subscription-card.is-inactive {
+  border: solid 2px #c8c8c8;
+  color: #c8c8c8;
+  background-color: #ffffff00;
+}
+
+.subscription-card.is-inactive .label--sm {
+  color: #c8c8c8;
+}
+
+.subscription-card.is-inactive .card-badge {
+  background: linear-gradient(
+    180deg,
+    #FEA963,
+    #FF7676
+  );
+  color: #fff;
+}
+
+/* ------------------------------
+   Media
+-------------------------------- */
+
+@media (max-width: 1195px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+    gap: 40px;
+  }
+
+  .header {
+    gap: 20px;
+  }
+
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content-container {
+    padding: 30px 20px;
+    border-radius: 40px 40px 0px 0px;
+  }
+}
+
+@media (max-width: 825px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
