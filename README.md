@@ -1,16 +1,89 @@
-# React + Vite
+# Subscriptions Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive subscriptions dashboard built to explore data-driven UI, filtering logic, and real-world layout constraints.
 
-Currently, two official plugins are available:
+The project focuses on **structure first**, then layering behaviour on top via React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app displays a list of subscriptions and one-off payments with:
 
-## Expanding the ESLint configuration
+- Sidebar summary
+- Monthly total calculation
+- Status & type filtering
+- Responsive grid layout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+UI is fully driven by a single data source.
+
+---
+
+## Features
+
+### Rendering
+- Subscriptions defined in `/data/Subscriptions.js`
+- Cards rendered via `.map()`
+- No duplicated markup
+
+### State
+- Filter by:
+  - Subscription type
+  - Active / inactive status
+- Filters are composable
+- Original dataset remains immutable
+
+### UI
+- Grid-based card layout
+- Normalised icon sizing (mixed SVG sources)
+- Clear visual distinction between:
+  - Active
+  - Inactive
+  - One-off items
+- Responsive across desktop, tablet, mobile
+
+---
+
+## Project Structure
+
+src/
+├── components/
+│   ├── Sidebar.jsx
+│   ├── Content.jsx
+│   ├── Filters.jsx
+│   ├── SubscriptionCard.jsx
+│   ├── Icons.jsx
+│   └── FilterIcons.jsx
+├── data/
+│   └── Subscriptions.js
+├── styles/
+│   └── index.css
+├── App.jsx
+└── main.jsx
+
+---
+
+## Implementation Notes
+
+- HTML structure was completed **before** introducing React
+- CSS layout and responsiveness were finalised prior to componentisation
+- React is used for:
+  - Data mapping
+  - Conditional classes
+  - Filter state
+- No external UI libraries
+
+---
+
+## Tech Stack
+
+- React
+- JavaScript (ES6+)
+- CSS (Grid, Flexbox)
+- Vite
+
+---
+
+## Author
+
+Charles Warburg
